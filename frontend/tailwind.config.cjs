@@ -9,7 +9,10 @@ module.exports = {
         primary: '#2563EB',
         secondary: '#1E40AF',
     },
-  },
+    gridTemplateColumns: {
+      'auto': 'repeat(auto-fill, minmax(200px, 1fr))'
+  }
 },
+  },
   plugins: [],
 }

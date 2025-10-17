@@ -8,8 +8,8 @@ const header = () => {
 
         <div className="md:w-1/2 flex flex-col items-start justify-center gap-4 py-6 m-auto md:pt-[5w] md:mb-[-30px] -mt-4">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight md:leading-tight lg:leading-tight">
-          <span className="block mb-3 font-black text-blue-950">Your health,</span>
-          <span className="block mb-3 font-black text-blue-950">Your doctor,</span>
+          <span className="block mb-3 font-black text-blue-950">Your health</span>
+          <span className="block mb-3 font-black text-blue-950">Your doctor</span>
           <span className="block font-bold italic text-black">just a click away.</span>
         </h1>
         <div>
