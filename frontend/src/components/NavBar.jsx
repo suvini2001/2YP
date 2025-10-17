@@ -10,25 +10,45 @@ const NavBar = () => {
   return (
     <div className='flex item-center justify-between text-sm py-4 mb-5 border-b border-b-grey-400'>
       <img className='w-44 h-auto object-contain cursor-pointer hover:opacity-90 transition-opacity' src={assets.logo} alt="Logo" /> 
-      <ul className='hidden md:flex item-start gap-5 font-medium'>
-        <NavLink to="/">
-            <li className='py-1'> HOME</li>
-            <hr className='border-non outline-non h-0.5 bg-primary w-3/5 m-auto hidden' />
+      <ul className='hidden md:flex items-center gap-6 font-medium'>
+        <NavLink to="/" className={({isActive}) => `relative group ${isActive ? 'text-blue-600' : ''}`}>
+            <li className='px-6 py-2.5 rounded-lg transition-all duration-300
+                         border-2 border-transparent hover:border-blue-600
+                         hover:bg-blue-50 hover:shadow-md
+                         group-hover:scale-105 transform'> 
+              HOME
+              <span className='absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
+            </li>
         </NavLink>
 
-        <NavLink to="/doctors">
-            <li className='py-1' > ALL DOCTORS</li>
-            <hr className='border-non outline-non h-0.5 bg-primary w-3/5 m-auto hidden' />
+        <NavLink to="/doctors" className={({isActive}) => `relative group ${isActive ? 'text-blue-600' : ''}`}>
+            <li className='px-6 py-2.5 rounded-lg transition-all duration-300
+                         border-2 border-transparent hover:border-blue-600
+                         hover:bg-blue-50 hover:shadow-md
+                         group-hover:scale-105 transform'> 
+              ALL DOCTORS
+              <span className='absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
+            </li>
         </NavLink>
 
-        <NavLink to="/about">
-            <li className='py-1'> ABOUT</li>
-            <hr className='border-non outline-non h-0.5 bg-primary w-3/5 m-auto hidden' />
+        <NavLink to="/about" className={({isActive}) => `relative group ${isActive ? 'text-blue-600' : ''}`}>
+            <li className='px-6 py-2.5 rounded-lg transition-all duration-300
+                         border-2 border-transparent hover:border-blue-600
+                         hover:bg-blue-50 hover:shadow-md
+                         group-hover:scale-105 transform'> 
+              ABOUT
+              <span className='absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
+            </li>
         </NavLink>
 
-        <NavLink to="/contact">
-            <li className='py-1'> CONTACT</li>
-            <hr className='border-non outline-non h-0.5 bg-primary w-3/5 m-auto hidden' />
+        <NavLink to="/contact" className={({isActive}) => `relative group ${isActive ? 'text-blue-600' : ''}`}>
+            <li className='px-6 py-2.5 rounded-lg transition-all duration-300
+                         border-2 border-transparent hover:border-blue-600
+                         hover:bg-blue-50 hover:shadow-md
+                         group-hover:scale-105 transform'> 
+              CONTACT
+              <span className='absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
+            </li>
         </NavLink>
       </ul>
       <div className=' flex item-center gap-2 cursor-pointer group relative'>
