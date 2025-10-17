@@ -9,7 +9,7 @@ const NavBar = () => {
 
   return (
     <div className='flex item-center justify-between text-sm py-4 mb-5 border-b border-b-grey-400'>
-      <img className='w-44 h-auto object-contain cursor-pointer hover:opacity-90 transition-opacity' src={assets.logo} alt="Logo" /> 
+      <img onClick={()=>navigate('/')} className='w-44 h-auto object-contain cursor-pointer hover:opacity-90 transition-opacity' src={assets.logo} alt="Logo" /> 
       <ul className='hidden md:flex items-center gap-6 font-medium'>
         <NavLink to="/" className={({isActive}) => `relative group ${isActive ? 'text-blue-600' : ''}`}>
             <li className='px-6 py-2.5 rounded-lg transition-all duration-300
