@@ -1,9 +1,11 @@
-import React from 'react'
-import { doctors } from '../assets/assets_frontend/assets'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
 
 const TopDoctors = () => {
     const navigate = useNavigate();
+    const { doctors } = useContext(AppContext);
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
@@ -15,7 +17,14 @@ const TopDoctors = () => {
             {doctors.slice(0,10).map((item,index) => (
                 <div onClick={() => navigate(`/appointment/${item._id}`)} key={index} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
                     <div className="relative">
-                        <img src={item.image} alt={item.name} className="w-full h-48 object-cover" />
+                        <img 
+                            src={item.image} 
+                            alt={item.name} 
+                            className="w-full h-48 object-cover" 
+                            loading="lazy"
+                            width="300"
+                            height="192"
+                        />
                     </div>
                     <div className="p-4">
                         <div className="flex items-center gap-2 mb-3">
@@ -40,7 +49,7 @@ const TopDoctors = () => {
         </div>
 
         <div className="text-center mt-12">
-            <button className="group bg-gradient-to-r from-blue-600 to-blue-800 text-white px-10 py-4 rounded-full font-bold
+            <button onClick={()=>{navigate('/doctors'); scrollTo(0,0)}} className="group bg-gradient-to-r from-blue-600 to-blue-800 text-white px-10 py-4 rounded-full font-bold
                            hover:from-blue-700 hover:to-blue-900 transform hover:scale-105
                            transition-all duration-300 shadow-lg hover:shadow-xl
                            border border-blue-400/20 flex items-center gap-3 mx-auto">
@@ -48,7 +57,7 @@ const TopDoctors = () => {
                 <svg className="w-5 h-5 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-            </button>
+            </button >
         </div>
     </div>
   )

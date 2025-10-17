@@ -7,10 +7,13 @@ const header = () => {
         {/*--------Left side--------*/}
 
         <div className="md:w-1/2 flex flex-col items-start justify-center gap-4 py-6 m-auto md:pt-[5w] md:mb-[-30px] -mt-4">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight md:leading-tight lg:leading-tight">
-          <span className="block mb-3 font-black text-blue-950">Your health</span>
-          <span className="block mb-3 font-black text-blue-950">Your doctor</span>
-          <span className="block font-bold italic text-black">just a click away.</span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight md:leading-tight lg:leading-tight relative">
+          <span className="block mb-3 font-black bg-gradient-to-r from-blue-950 to-blue-900 bg-clip-text text-transparent animate-fade-in-down">Your health</span>
+          <span className="block mb-3 font-black bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent animate-fade-in-down animation-delay-200">Your doctor</span>
+          <span className="block font-bold bg-gradient-to-r from-blue-800 via-blue-900 to-blue-950 bg-clip-text text-transparent relative animate-fade-in-up animation-delay-400 hover:scale-105 transition-transform duration-300">
+            just a click away
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-900 to-blue-950 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </span>
         </h1>
         <div>
             <img src={assets.group_profiles} alt="Group profiles" className="w-20 h-auto" />
