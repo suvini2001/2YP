@@ -50,6 +50,19 @@ const NavBar = () => {
               <span className='absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
             </li>
         </NavLink>
+        {!token && (
+          <li className="ml-8">
+            <button
+              onClick={() => navigate('/login')}
+              className='bg-white text-black px-8 py-3 rounded-full font-bold border-2 border-blue-800 shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50
+                hover:bg-blue-600 hover:text-white hover:border-transparent hover:shadow-2xl hover:scale-110 hover:animate-pulse
+                active:scale-95 active:shadow-lg'
+              style={{ transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)' }}
+            >
+              Create Account
+            </button>
+          </li>
+        )}
       </ul>
       <div className=' flex item-center gap-2 cursor-pointer group relative'>
         {token ? (<div className="flex items-center gap-2"> 
@@ -63,11 +76,7 @@ const NavBar = () => {
                           </div>
                         </div>
                 </div>) : (
-          <div>
-            <button onClick={() => navigate('/login')} className='bg-white text-black px-8 py-3 rounded-full font-bold hidden md:block border-2 border-blue-800 hover:bg-blue-600 hover:text-white hover:border-transparent transition-all duration-300'>
-              Create Account
-            </button>
-          </div>
+          <></>
         )}
       </div>
     </div>
