@@ -87,7 +87,7 @@ useEffect(() => {
             <span className="bg-blue-100 text-blue-900 px-4 py-2 rounded-full text-base border border-blue-200 shadow-sm font-medium">{doctorInfo.degree}</span>
             <span className="bg-blue-100 text-blue-900 px-4 py-2 rounded-full text-base border border-blue-200 shadow-sm font-medium">{doctorInfo.speciality}</span>
           </div>
-          <p className="text-blue-700 text-lg mb-3 font-semibold">{doctorInfo.experience} years of experience</p>
+          <p className="text-blue-700 text-lg mb-3 font-semibold">{doctorInfo.experience} of experience</p>
           {/* About Section */}
           <div className="mt-8 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl p-5 border border-blue-100 shadow">
             <div className="flex items-center gap-2 mb-2">
