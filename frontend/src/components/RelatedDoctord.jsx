@@ -1,11 +1,21 @@
-import React, { useContext } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { AppContext } from '../context/AppContext';
+import { useEffect } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 
-const TopDoctors = () => {
+
+const RelatedDoctord = ({speciality, docId}) => {
+
+    const {doctors} = useContext(AppContext);
+    const [relatedDoctors, setRelatedDoctors] = useState([]);
     const navigate = useNavigate();
-    const { doctors } = useContext(AppContext);
 
+    useEffect(() => {
+      if(doctors.length > 0 && speciality ){
+        const doctordData = doctors.filter((doc) => doc.speciality === speciality && doc._id !== docId);
+       setRelatedDoctors(doctordData);
+        }
+       }, [doctors, speciality, docId]);
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
@@ -13,8 +23,9 @@ const TopDoctors = () => {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto whitespace-nowrap">Simply browse through our list of top doctors and book your appointment online in minutes.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {doctors.slice(0,10).map((item,index) => (
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 justify-center px-4">
+
+            {relatedDoctors.slice(0,5).map((item,index) => (
                 <div onClick={() => {navigate(`/appointment/${item._id}`);scrollTo(0,0)}} key={index} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
                     <div className="relative">
                         <img 
@@ -63,4 +74,4 @@ const TopDoctors = () => {
   )
 }
 
-export default TopDoctors
+export default RelatedDoctord
