@@ -1,8 +1,10 @@
 import { assets } from "../assets/assets_frontend/assets"
+import { useNavigate } from "react-router-dom";
 
 
 const Footer = () => {
-  return (
+    const navigate = useNavigate();
+    return (
     <footer className="bg-gray-50 mt-16 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -18,10 +20,10 @@ const Footer = () => {
                 <div className="space-y-4">
                     <p className="font-semibold text-gray-900">COMPANY</p>
                     <ul className="space-y-2">
-                        <li className="text-gray-600 hover:text-blue-600 cursor-pointer transition-colors">Home</li>
-                        <li className="text-gray-600 hover:text-blue-600 cursor-pointer transition-colors">About Us</li>
-                        <li className="text-gray-600 hover:text-blue-600 cursor-pointer transition-colors">Contact Us</li>
-                        <li className="text-gray-600 hover:text-blue-600 cursor-pointer transition-colors">Privacy Policy</li>
+                        <li className="text-gray-600 hover:text-blue-600 cursor-pointer transition-colors" onClick={() => {navigate("/"); setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 200);}}>Home</li>
+                        <li className="text-gray-600 hover:text-blue-600 cursor-pointer transition-colors" onClick={() => {navigate("/about"); setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 200);}}>About Us</li>
+                        <li className="text-gray-600 hover:text-blue-600 cursor-pointer transition-colors" onClick={() => {navigate("/contact"); setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 200);}}>Contact Us</li>
+                        <li className="text-gray-600 hover:text-blue-600 cursor-pointer transition-colors" onClick={() => {navigate("/privacy-policy"); setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 200);}}>Privacy Policy</li>
                     </ul>
                 </div>
 
